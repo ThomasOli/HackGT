@@ -15,20 +15,13 @@ import "./Home.css";
 export default function Home() {
   return (
     <main>  
-      <ParallaxProvider>
       
+      <ParallaxProvider>
         <header>
+        
           <ParallaxBanner
             className="banner"
             layers={[
-            {
-                speed: -500,
-                children: (
-                    <div className="textdiv">
-                        <h1 className="text">HelloWOrld</h1>
-                    </div>
-                ),
-            },
             {
                 translateY: ['-2500px', '-25px'],
                 children: (
@@ -59,10 +52,16 @@ export default function Home() {
                 <h1 className="text">HelloWOrld</h1>
             </div> */}
         </ParallaxBanner>
+        <div className="textdiv">
+            <h1 className="text">Owl you need is knowledge. Not long articles.</h1>
+        </div>
         </header>
       </ParallaxProvider>
-      <div>
-        <p>Helloworld</p>
+      <div style={{display: "flex"}}>
+        <h1>Welcome to HootAI - your new tool for studying smarter and faster.</h1>
+        <p>Just upload your reading, article, or content and we'll generate a summary, important points, 
+          and a quiz for you. Quizzes not your learning style? Explore our tactical option, which allows you to 
+          interact directly with what you have to learn.  </p>
       </div>
     </main>
   );

@@ -32,6 +32,7 @@ function SimpleDialog(props) {
   };
 
   const Page = React.forwardRef((props, ref) => {
+    if (!ref || !ref.current) return null; // Check if ref or ref.current is not defined
     return (
         <div ref={ref}>
             <h1>Page Header</h1>

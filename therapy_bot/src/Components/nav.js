@@ -11,7 +11,7 @@ const Navbar = () => {
         <div className="block">
         <img src={logo} alt="logo" className='logo' />
         <div className="brand">
-          TherapyBot
+          HootAI
         </div>
         </div>
       
@@ -25,8 +25,8 @@ const Navbar = () => {
           <Link to="/chat" className="link" activeClassName="activeLink">
             Chat
           </Link>
-          <Link to="/Login" className="link" activeClassName="activeLink">
-            Login
+          <Link to="/quiz.js" className="link" activeClassName="activeLink">
+            Quizzes
           </Link>
         </div>
       </nav>
