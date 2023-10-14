@@ -13,6 +13,10 @@ import PersonIcon from '@mui/icons-material/Person';
 import AddIcon from '@mui/icons-material/Add';
 import Typography from '@mui/material/Typography';
 import { blue } from '@mui/material/colors';
+import Book from './Images/book.png';
+import HTMLFlipBook from 'react-pageflip';
+
+
 
 const emails = ['username@gmail.com', 'user02@gmail.com'];
 
@@ -27,9 +31,19 @@ function SimpleDialog(props) {
     onClose(value);
   };
 
+  const Page = React.forwardRef((props, ref) => {
+    return (
+        <div ref={ref}>
+            <h1>Page Header</h1>
+            <p>{props.children}</p>
+            <p>Page number: {props.number}</p>
+        </div>
+    );
+  });
+
   return (
-    <Dialog onClose={handleClose} open={open}>
-      <DialogTitle>Set backup account</DialogTitle>
+    <Dialog onClose={handleClose} open={open} fullWidth maxWidth='xlg'>
+        
       <List sx={{ pt: 0 }}>
         {emails.map((email) => (
           <ListItem disableGutters key={email}>
@@ -57,6 +71,15 @@ function SimpleDialog(props) {
           </ListItemButton>
         </ListItem>
       </List>
+      <div>
+        <HTMLFlipBook width={300} height={500}>
+            <Page number="1">Page text 1</Page>
+            <Page number="2">Page text 2</Page>
+            <Page number="3">Page text 3</Page>
+            <Page number="4">Page text</Page>
+        </HTMLFlipBook>
+      </div>
+      
     </Dialog>
   );
 }
@@ -80,14 +103,16 @@ export default function SimpleDialogDemo() {
     setSelectedValue(value);
   };
 
+
+
   return (
     <div>
       <Typography variant="subtitle1" component="div">
-        Selected: {selectedValue}
+        {/* Selected: {selectedValue} */}
       </Typography>
       <br />
-      <Button variant="outlined" onClick={handleClickOpen}>
-        Open simple dialog
+      <Button onClick={handleClickOpen}>
+        <img src={Book} />
       </Button>
       <SimpleDialog
         selectedValue={selectedValue}
