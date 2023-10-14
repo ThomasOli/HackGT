@@ -6,6 +6,7 @@
     "@auth0/auth0-react": "^2.2.1",
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
+    "@mui/icons-material": "^5.14.13",
     "@mui/material": "^5.14.13",
     "@mui/styled-engine-sc": "^6.0.0-alpha.1",
     "@testing-library/jest-dom": "^5.17.0",
