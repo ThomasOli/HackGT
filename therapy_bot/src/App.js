@@ -5,7 +5,6 @@ import Home from './Components/Pages/Home';
 import Quiz from './Components/quiz';
 import Navbar from './Components/nav';
 import Journals from './Components/journals';
-//import Login from './Components/Pages/login';
 
 function App() {
   return (

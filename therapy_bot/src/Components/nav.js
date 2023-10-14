@@ -28,6 +28,9 @@ const Navbar = () => {
           <Link to="/quiz" className="link" activeClassName="activeLink">
             Quizzes
           </Link>
+          <Link to="/login" className="link" activeClassName="activeLink">
+            Login
+          </Link>
         </div>
       </nav>
     </div>
