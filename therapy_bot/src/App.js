@@ -6,10 +6,6 @@ import Navbar from './Components/nav';
 import Login from './login';
 import Journals from './Components/journals';
 
-const BlueBorder = () => {
-  return <div style={{ backgroundColor: 'blue', height: '5px', width: '100%' }}></div>;
-};
-
 function App() {
   return (
       <Router>
