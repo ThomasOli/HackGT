@@ -4,7 +4,7 @@
 
 .navbar {
   width: 100%;
-  height: 100px;
+  height: min-content;
   background: #2b1055;
   font-family: Raleway, sans-serif;
   display: flex;
@@ -45,6 +45,15 @@
   font-weight: bold;
   padding: 10px;
   margin-left: 10px;
+  justify-content: left;
+}
+
+.logo {
+  width: 15%;
+}
+
+.block {
+  display: inline;
 }
 
 .links {

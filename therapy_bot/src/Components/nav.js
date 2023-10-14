@@ -2,16 +2,19 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './nav.css';
-import logo from '../images/gator.png';
+import logo from './Images/owlLogo.png';
 
 const Navbar = () => {
   return (
     <div>
       <nav className="navbar">
+        <div className="block">
+        <img src={logo} alt="logo" className='logo' />
         <div className="brand">
-          <img src={logo} alt="logo" style={{ height: "50px", width: "50px" }} />
           TherapyBot
         </div>
+        </div>
+      
         <div className="links">
           <Link to="/" className="link" activeClassName="activeLink">
             Home
