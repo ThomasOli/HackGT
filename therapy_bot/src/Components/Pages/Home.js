@@ -15,18 +15,19 @@ import "./Home.css";
 export default function Home() {
   return (
     <main>  
-      
       <ParallaxProvider>
+      
         <header>
-        
           <ParallaxBanner
             className="banner"
             layers={[
             {
+                speed: -500,
+            },
+            {
                 translateY: ['-2500px', '-25px'],
                 children: (
                     <div className="textdiv">
-                        {/* <h1 className="text">HelloWOrld</h1> */}
                         <img src={bg1} />
                     </div>
                 ),
@@ -48,13 +49,10 @@ export default function Home() {
             ]}
           >
         
-            {/* <div className="textdiv">
+            <div className="textdiv">
                 <h1 className="text">HelloWOrld</h1>
-            </div> */}
+            </div>
         </ParallaxBanner>
-        <div className="textdiv">
-            <h1 className="text">Owl you need is knowledge. Not long articles.</h1>
-        </div>
         </header>
       </ParallaxProvider>
       <div className="homeMessageBox" style={{display: "flex"}}>
