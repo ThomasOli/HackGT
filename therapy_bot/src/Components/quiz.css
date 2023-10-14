@@ -1,0 +1,44 @@
+@import url("https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@500&display=swap");
+
+.quiz {
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    width: 400px;
+    margin: 0 auto;
+  }
+  
+  .question-section {
+    margin-bottom: 20px;
+  }
+  
+  .question-count {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .question-text {
+    font-size: 20px;
+    margin-top: 10px;
+  }
+  
+  .answer-section {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+  }
+  
+  button {
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #e0e0e0;
+  }
+  
