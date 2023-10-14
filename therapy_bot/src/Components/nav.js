@@ -2,16 +2,19 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './nav.css';
-import logo from '../images/gator.png';
+import logo from './Images/owlLogo.png';
 
 const Navbar = () => {
   return (
     <div>
       <nav className="navbar">
+        <div className="block">
+        <img src={logo} alt="logo" className='logo' />
         <div className="brand">
-          <img src={logo} alt="logo" style={{ height: "50px", width: "50px" }} />
-          TherapyBot
+          HootAI
         </div>
+        </div>
+      
         <div className="links">
           <Link to="/" className="link" activeClassName="activeLink">
             Home
@@ -22,8 +25,13 @@ const Navbar = () => {
           <Link to="/chat" className="link" activeClassName="activeLink">
             Chat
           </Link>
+<<<<<<< HEAD
           <Link to="/quiz.js" className="link" activeClassName="activeLink">
             Quizzes
+=======
+          <Link to="/Login" className="link" activeClassName="activeLink">
+            Login
+>>>>>>> a30eb46f79e2b8683d8c98d3581be454b9146330
           </Link>
         </div>
       </nav>
