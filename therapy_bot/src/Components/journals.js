@@ -14,7 +14,7 @@ import AddIcon from '@mui/icons-material/Add';
 import Typography from '@mui/material/Typography';
 import { blue } from '@mui/material/colors';
 import Book from './Images/book.png';
-import HTMLFlipBook from 'react-pageflip';
+import { Block } from '@mui/icons-material';
 
 
 
@@ -31,21 +31,11 @@ function SimpleDialog(props) {
     onClose(value);
   };
 
-  const Page = React.forwardRef((props, ref) => {
-    if (!ref || !ref.current) return null; // Check if ref or ref.current is not defined
-    return (
-        <div ref={ref}>
-            <h1>Page Header</h1>
-            <p>{props.children}</p>
-            <p>Page number: {props.number}</p>
-        </div>
-    );
-  });
-
   return (
-    <Dialog onClose={handleClose} open={open} fullWidth maxWidth='xlg'>
-        
-      <List sx={{ pt: 0 }}>
+    <Dialog onClose={handleClose} open={open} fullWidth maxWidth='xlg' style={{display: 'block'}}>
+      <div className = "topicsList">
+      <List sx={{ pt: 0, width: '50%' }}>
+      <h1>Topics:</h1>
         {emails.map((email) => (
           <ListItem disableGutters key={email}>
             <ListItemButton onClick={() => handleListItemClick(email)}>
@@ -72,15 +62,7 @@ function SimpleDialog(props) {
           </ListItemButton>
         </ListItem>
       </List>
-      <div>
-        <HTMLFlipBook width={300} height={500}>
-            <Page number="1">Page text 1</Page>
-            <Page number="2">Page text 2</Page>
-            <Page number="3">Page text 3</Page>
-            <Page number="4">Page text</Page>
-        </HTMLFlipBook>
       </div>
-      
     </Dialog>
   );
 }
