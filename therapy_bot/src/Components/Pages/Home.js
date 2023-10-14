@@ -1,59 +1,68 @@
-import React from 'react';
-import { Parallax, ParallaxLayer, ParallaxProvider } from 'react-scroll-parallax';
-import Gator from "../../images/sparkle.jpg";
-import './Home.css';
+import React from "react";
+//import { ParallaxProvider } from "react-scroll-parallax";
+import { ParallaxProvider, ParallaxBanner } from "react-scroll-parallax";
 
-function Home() {
-    return (
-        // <ParallaxProvider>
-        // <div className='App'>
-        //     <Parallax strength={600} bgImage={Gator}>
-        //         <div className='content'>
-        //             <div className='text-content'>askdfj Parallax</div>
-        //         </div>
-        //     </Parallax>
-        //     <div className='content'></div>
-        // </div>
-        // </ParallaxProvider>
-        <div>
-        <div class="parallax"></div>
+// mountain functionality from: https://github.com/jscottsmith/react-scroll-parallax-examples
 
-        <div className='content'>
-        Scroll Up and Down this page to see the parallax scrolling effect.
-        This div is just here to enable scrolling.
-        Tip: Try to remove the background-attachment property to remove the scrolling effect.
-        </div>
+import bg1 from "../Images/bg-1.jpg";
+import bg2 from "../Images/bg-2.png";
+import bg3 from "../Images/bg-3.png";
+import bg4 from "../Images/bg-4.png";
+import bg5 from "../Images/bg-5.png";
 
-        <div class="parallax2"></div>
-        </div>
-    )
+import "./Home.css";
+
+export default function Home() {
+  return (
+    <main>
+      <ParallaxProvider>
+        <header>
+          <ParallaxBanner
+            className="banner"
+            layers={[
+              {
+            //     image: bg1,
+            //     translateY: [0, 50],
+            //     shouldAlwaysCompleteAnimation: true,
+            //     expanded: false,
+            //   },
+            //   {
+                image: bg2,
+                translateY: [5, 45],
+
+                shouldAlwaysCompleteAnimation: true,
+                expanded: false,
+              },
+              {
+                image: bg3,
+                translateY: [10, 30],
+
+                shouldAlwaysCompleteAnimation: true,
+                expanded: false,
+              },
+              {
+                image: bg4,
+                translateY: [15, 25],
+
+                shouldAlwaysCompleteAnimation: true,
+                expanded: false,
+              },
+              {
+                image: bg5,
+                translateY: [20, 20],
+
+                shouldAlwaysCompleteAnimation: true,
+                expanded: false,
+              },
+            ]}
+          />
+        </header>
+      </ParallaxProvider>
+      <div>
+        <p>Helloworld</p>
+      </div>
+    </main>
+  );
 }
 
 
-// function Component() {
-//     const parallax = useParallax({
-//       speed: -10,
-//     });
-//     return <div ref={parallax.ref} />;
-//   }
-
-// const Component = () => (
-//     <Parallax translateY={[-20, 20]}>
-//       <div className="my-thing" />
-//     </Parallax>
-//   );
-
-// function Home() {
-//     {
-//         return (
-
-//           <ParallaxProvider>
-//             <p>
-//                 helloworld
-//             </p>
-//           </ParallaxProvider>
-//         );
-//       }
-// }
-
-export default Home

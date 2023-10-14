@@ -1,43 +1,27 @@
-/* .content {
+.star {
+    position: fixed;
+    top: 1em;
+    right: 1em;
+    z-index: 999;
+  }
+  
+  html,
+  body {
+    padding: 0;
+    margin: 0;
+    background: #40255b;
+  }
+  
+  main {
+    height: 300vh;
+  }
+  
+  p {
+    font-family: helvetica, sans-serif;
+    color: #eee;
+  }
+  
+  .banner {
     height: 100vh;
-}
-
-.text-content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    padding: 5px 15px;
-    transform: translate(-50%, -50%);
-    background: gray;
-    color: white;
-    border-radius: 20px;
-    font-size: 50px;
-} */
-
-.parallax {
-    background-image: url("../../images/sparkle.jpg");
-
-    height: 100vh;
-
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-.parallax2 {
-    background-image: url("../../images/gator.png");
-
-    height: 200vh;
-
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-.content {
-    height: 1000px;
-    background-color: red;
-    font-size: 36px;
-}
+    background: #bbe8f6;
+  }
