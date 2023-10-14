@@ -3,17 +3,18 @@ import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './Components/Pages/Home';
 import Navbar from './Components/nav';
+import Auth from './auth';
 
 function App() {
   return (
-    <div>
+    <Auth>
       <Router>
           <Navbar />
         <Routes>
           <Route path = "/" element={<Home/>}></Route>
         </Routes>
       </Router>
-    </div>
+    </Auth>
   );
 }
 
