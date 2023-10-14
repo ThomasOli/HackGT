@@ -1,4 +1,4 @@
-.content {
+/* .content {
     height: 100vh;
 }
 
@@ -12,4 +12,32 @@
     color: white;
     border-radius: 20px;
     font-size: 50px;
+} */
+
+.parallax {
+    background-image: url("../../images/sparkle.jpg");
+
+    height: 100vh;
+
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.parallax2 {
+    background-image: url("../../images/gator.png");
+
+    height: 200vh;
+
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.content {
+    height: 1000px;
+    background-color: red;
+    font-size: 36px;
 }
