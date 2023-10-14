@@ -25,7 +25,7 @@ const Navbar = () => {
           <Link to="/chat" className="link" activeClassName="activeLink">
             Chat
           </Link>
-          <Link to="/quiz.js" className="link" activeClassName="activeLink">
+          <Link to="/quiz" className="link" activeClassName="activeLink">
             Quizzes
           </Link>
         </div>
