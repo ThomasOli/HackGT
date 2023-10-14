@@ -11,7 +11,7 @@ const Navbar = () => {
         <div className="block">
         <img src={logo} alt="logo" className='logo' />
         <div className="brand">
-          TherapyBot
+          HootAI
         </div>
         </div>
       
