@@ -25,6 +25,9 @@ const Navbar = () => {
           <Link to="/chat" className="link" activeClassName="activeLink">
             Chat
           </Link>
+          <Link to="/Login" className="link" activeClassName="activeLink">
+            Login
+          </Link>
         </div>
       </nav>
     </div>
