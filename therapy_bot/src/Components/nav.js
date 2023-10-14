@@ -25,13 +25,8 @@ const Navbar = () => {
           <Link to="/chat" className="link" activeClassName="activeLink">
             Chat
           </Link>
-<<<<<<< HEAD
           <Link to="/quiz.js" className="link" activeClassName="activeLink">
             Quizzes
-=======
-          <Link to="/Login" className="link" activeClassName="activeLink">
-            Login
->>>>>>> a30eb46f79e2b8683d8c98d3581be454b9146330
           </Link>
         </div>
       </nav>
