@@ -7,14 +7,12 @@ import Auth from './auth';
 
 function App() {
   return (
-    <Auth>
       <Router>
           <Navbar />
         <Routes>
           <Route path = "/" element={<Home/>}></Route>
         </Routes>
       </Router>
-    </Auth>
   );
 }
 
