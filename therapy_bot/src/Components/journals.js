@@ -14,11 +14,13 @@ import AddIcon from '@mui/icons-material/Add';
 import Typography from '@mui/material/Typography';
 import { blue } from '@mui/material/colors';
 import Book from './Images/book.png';
-import HTMLFlipBook from 'react-pageflip';
+import { Block } from '@mui/icons-material';
+import "./journals.css"
+import SummarizeIcon from '@mui/icons-material/Summarize';
 
 
 
-const emails = ['username@gmail.com', 'user02@gmail.com'];
+const emails = ['Calculus', 'Economics', 'Research Paper', 'Programming'];
 
 function SimpleDialog(props) {
   const { onClose, selectedValue, open } = props;
@@ -27,31 +29,31 @@ function SimpleDialog(props) {
     onClose(selectedValue);
   };
 
-  const handleListItemClick = (value) => {
-    onClose(value);
-  };
-
-  const Page = React.forwardRef((props, ref) => {
-    if (!ref || !ref.current) return null; // Check if ref or ref.current is not defined
-    return (
-        <div ref={ref}>
-            <h1>Page Header</h1>
-            <p>{props.children}</p>
-            <p>Page number: {props.number}</p>
-        </div>
-    );
-  });
+  // const handleListItemClick = (value) => {
+  //   onClose(value);
+  // };
 
   return (
-    <Dialog onClose={handleClose} open={open} fullWidth maxWidth='xlg'>
-        
-      <List sx={{ pt: 0 }}>
-        {emails.map((email) => (
-          <ListItem disableGutters key={email}>
-            <ListItemButton onClick={() => handleListItemClick(email)}>
+    <Dialog onClose={handleClose} open={open} fullWidth maxWidth='xlg' style={{display: 'block'}}>
+      <div>
+        <div className='halfBox'>
+          <h1>Topics:</h1>
+        </div>
+        <div className='halfBox'>
+          <h1>Topics:</h1>
+        </div>
+      </div>
+      <div>  
+        <div className="halfBox">
+            
+            <List sx={{ pt: 0 }}>
+            {emails.map((email) => (
+            <ListItem disableGutters key={email}>
+            {/* <ListItemButton onClick={() => handleListItemClick(email)}> */}
+            <ListItemButton>
               <ListItemAvatar>
                 <Avatar sx={{ bgcolor: blue[100], color: blue[600] }}>
-                  <PersonIcon />
+                  <SummarizeIcon />
                 </Avatar>
               </ListItemAvatar>
               <ListItemText primary={email} />
@@ -61,26 +63,22 @@ function SimpleDialog(props) {
         <ListItem disableGutters>
           <ListItemButton
             autoFocus
-            onClick={() => handleListItemClick('addAccount')}
+            // onClick={() => handleListItemClick('addAccount')}
           >
             <ListItemAvatar>
               <Avatar>
                 <AddIcon />
               </Avatar>
             </ListItemAvatar>
-            <ListItemText primary="Add account" />
+            <ListItemText primary="Add topic" />
           </ListItemButton>
         </ListItem>
-      </List>
-      <div>
-        <HTMLFlipBook width={300} height={500}>
-            <Page number="1">Page text 1</Page>
-            <Page number="2">Page text 2</Page>
-            <Page number="3">Page text 3</Page>
-            <Page number="4">Page text</Page>
-        </HTMLFlipBook>
+            </List>
+        </div>
+        <div className="halfBox">
+          
+        </div>
       </div>
-      
     </Dialog>
   );
 }
@@ -160,3 +158,30 @@ export default function SimpleDialogDemo() {
 // }
 
 // export default journals;
+
+{emails.map((email) => (
+  <ListItem disableGutters key={email}>
+    {/* <ListItemButton onClick={() => handleListItemClick(email)}> */}
+    <ListItemButton>
+      <ListItemAvatar>
+        <Avatar sx={{ bgcolor: blue[100], color: blue[600] }}>
+          <SummarizeIcon />
+        </Avatar>
+      </ListItemAvatar>
+      <ListItemText primary={email} />
+    </ListItemButton>
+  </ListItem>
+))}
+<ListItem disableGutters>
+  <ListItemButton
+    autoFocus
+    // onClick={() => handleListItemClick('addAccount')}
+  >
+    <ListItemAvatar>
+      <Avatar>
+        <AddIcon />
+      </Avatar>
+    </ListItemAvatar>
+    <ListItemText primary="Add topic" />
+  </ListItemButton>
+</ListItem>
