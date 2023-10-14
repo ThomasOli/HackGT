@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // nav.js
 import React from 'react';
 import { Link } from 'react-router-dom';
@@ -11,6 +12,18 @@ const Navbar = () => {
         <div className="brand">
           <img src={logo} alt="logo" style={{ height: "50px", width: "50px" }} />
           TherapyBot
+=======
+import React from 'react'
+import { Link } from 'react-router-dom'
+import './nav.css'
+
+const navbar = () => {
+  return (
+    <div className = "navbar">
+        <div className = "links">
+            <Link to="/home">Home</Link>
+            <Link to="/journals">Journals</Link>
+>>>>>>> d8ed4dc4cc7ad419ded39dc019898f0ee973d091
         </div>
         <div className="links">
           <Link to="/" className="link" activeClassName="activeLink">
