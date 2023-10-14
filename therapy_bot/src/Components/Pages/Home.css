@@ -39,3 +39,15 @@
     color: white;
     font: thin;
   }
+
+  .homeMessageBox {
+    padding-top: 6rem;
+  }
+
+  .messageHeading {
+    text-align: center;
+  }
+
+  .message {
+    text-align: left;
+  }
