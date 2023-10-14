@@ -15,10 +15,12 @@ import Typography from '@mui/material/Typography';
 import { blue } from '@mui/material/colors';
 import Book from './Images/book.png';
 import { Block } from '@mui/icons-material';
+import "./journals.css"
+import SummarizeIcon from '@mui/icons-material/Summarize';
 
 
 
-const emails = ['username@gmail.com', 'user02@gmail.com'];
+const emails = ['Calculus', 'Economics', 'Research Paper', 'Programming'];
 
 function SimpleDialog(props) {
   const { onClose, selectedValue, open } = props;
@@ -27,21 +29,31 @@ function SimpleDialog(props) {
     onClose(selectedValue);
   };
 
-  const handleListItemClick = (value) => {
-    onClose(value);
-  };
+  // const handleListItemClick = (value) => {
+  //   onClose(value);
+  // };
 
   return (
     <Dialog onClose={handleClose} open={open} fullWidth maxWidth='xlg' style={{display: 'block'}}>
-      <div className = "topicsList">
-      <List sx={{ pt: 0, width: '50%' }}>
-      <h1>Topics:</h1>
-        {emails.map((email) => (
-          <ListItem disableGutters key={email}>
-            <ListItemButton onClick={() => handleListItemClick(email)}>
+      <div>
+        <div className='halfBox'>
+          <h1>Topics:</h1>
+        </div>
+        <div className='halfBox'>
+          <h1>Topics:</h1>
+        </div>
+      </div>
+      <div>  
+        <div className="halfBox">
+            
+            <List sx={{ pt: 0 }}>
+            {emails.map((email) => (
+            <ListItem disableGutters key={email}>
+            {/* <ListItemButton onClick={() => handleListItemClick(email)}> */}
+            <ListItemButton>
               <ListItemAvatar>
                 <Avatar sx={{ bgcolor: blue[100], color: blue[600] }}>
-                  <PersonIcon />
+                  <SummarizeIcon />
                 </Avatar>
               </ListItemAvatar>
               <ListItemText primary={email} />
@@ -51,17 +63,21 @@ function SimpleDialog(props) {
         <ListItem disableGutters>
           <ListItemButton
             autoFocus
-            onClick={() => handleListItemClick('addAccount')}
+            // onClick={() => handleListItemClick('addAccount')}
           >
             <ListItemAvatar>
               <Avatar>
                 <AddIcon />
               </Avatar>
             </ListItemAvatar>
-            <ListItemText primary="Add account" />
+            <ListItemText primary="Add topic" />
           </ListItemButton>
         </ListItem>
-      </List>
+            </List>
+        </div>
+        <div className="halfBox">
+          
+        </div>
       </div>
     </Dialog>
   );
@@ -142,3 +158,30 @@ export default function SimpleDialogDemo() {
 // }
 
 // export default journals;
+
+{emails.map((email) => (
+  <ListItem disableGutters key={email}>
+    {/* <ListItemButton onClick={() => handleListItemClick(email)}> */}
+    <ListItemButton>
+      <ListItemAvatar>
+        <Avatar sx={{ bgcolor: blue[100], color: blue[600] }}>
+          <SummarizeIcon />
+        </Avatar>
+      </ListItemAvatar>
+      <ListItemText primary={email} />
+    </ListItemButton>
+  </ListItem>
+))}
+<ListItem disableGutters>
+  <ListItemButton
+    autoFocus
+    // onClick={() => handleListItemClick('addAccount')}
+  >
+    <ListItemAvatar>
+      <Avatar>
+        <AddIcon />
+      </Avatar>
+    </ListItemAvatar>
+    <ListItemText primary="Add topic" />
+  </ListItemButton>
+</ListItem>
