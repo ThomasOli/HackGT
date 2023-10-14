@@ -12,11 +12,6 @@ const BlueBorder = () => {
 
 function App() {
   return (
-<<<<<<< HEAD
-    <div>
-      <BlueBorder />
-=======
->>>>>>> d8ed4dc4cc7ad419ded39dc019898f0ee973d091
       <Router>
           <Navbar />
         <Routes>
