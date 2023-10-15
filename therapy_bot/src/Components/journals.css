@@ -29,6 +29,16 @@ h2 {
     margin-bottom: 10px;
 }
 
+.bookClass {
+    display: flex;
+    justify-content: center;
+    height: 80vh;
+}
+
+.buttonBook {
+    float: center;
+}
+
 
 /* .journals {
     width: 100%;

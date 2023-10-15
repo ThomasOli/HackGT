@@ -51,21 +51,20 @@ export default function Home() {
           >
         
             <div className="textdiv">
-                <h1 className="text">HootAI</h1>
+                <h1 className="text">Owl you need is knowledge. Not long readings.</h1>
             </div>
         </ParallaxBanner>
         </header>
       </ParallaxProvider>
-      <view className="homeMessageBox" style={{display: "flex"}}>
+      <view className="homeMessageBox">
         <h1 className="messageHeading">
           Welcome to HootAI - your new tool for studying smarter and faster.
-          
-          <p className="message">
-            Just upload your reading, article, or content and we'll generate a summary, important points, 
-            and a quiz for you. Quizzes not your learning style? Explore our tactical option, which allows you to 
-            interact directly with what you have to learn.  
-          </p>
-        </h1>
+        </h1> 
+        <p>
+          Just upload your reading, article, or content and we'll generate a summary, important points, 
+          and a quiz for you. Quizzes not your learning style? Explore our tactical option, which allows you to 
+          interact directly with what you have to learn.  
+        </p>
         <img src={girlStudying} className="messageImg"></img>
       </view>
     </main>

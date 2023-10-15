@@ -1,15 +1,10 @@
-.star {
-    position: fixed;
-    top: 1em;
-    right: 1em;
-    z-index: 999;
-  }
-  
+ 
   html,
   body {
     padding: 0;
     margin: 0;
     background: #40255b;
+    font-family: 'Cantarell';
   }
   
   main {
@@ -17,7 +12,7 @@
   }
   
   p {
-    font-family: helvetica, sans-serif;
+    font-family: "Cantarell";
     color: #eee;
   }
   
@@ -41,12 +36,7 @@
   }
 
   .homeMessageBox {
-    margin-top: 20%;
-    width: 100%;
-    height: 100px;
-    border-top-left-radius: 50% 75px;
-    border-top-right-radius: 50% 75px;
-    position: absolute;
+    display: flex;
     align-items: center;
   }
 
@@ -54,6 +44,8 @@
     text-align: center;
     font-size: 35px;
     align-items: center;
+    font-family: "Arimo";
+    color: white;
   }
 
   .messageImg {

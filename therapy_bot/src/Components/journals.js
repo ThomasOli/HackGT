@@ -149,12 +149,8 @@ export default function SimpleDialogDemo() {
 
 
   return (
-    <div>
-      <Typography variant="subtitle1" component="div">
-        {/* Selected: {selectedValue} */}
-      </Typography>
-      <br />
-      <Button onClick={handleClickOpen}>
+    <div className="bookClass">
+      <Button onClick={handleClickOpen} className="buttonBook">
         <img src={Book} />
       </Button>
       <SimpleDialog
