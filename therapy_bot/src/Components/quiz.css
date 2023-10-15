@@ -1,40 +1,15 @@
-.popup {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 50%;
-  height: 50%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(#2b1055, #7597de);
-  color: white; 
-}
-
-.popup button {
-  margin: 10px;
-  padding: 12px 30px; /* Adjusted padding for a better visual appearance */
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  cursor: pointer;
-  background-color: #fff;
-  color: #2b1055; /* Changed button text color for better contrast */
-}
-
-.popup button:hover {
-  background-color: #e0e0e0;
-}
-
+@import url("https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@500&display=swap");
 
 .quiz {
   padding: 50px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background: linear-gradient(#2b1055, #7597de);
   width: 600px;
   margin: auto;
-  position: relative;
-  z-index: 2; 
+  margin-top: 100px;
 }
+
 .question-section {
   margin-bottom: 30px;
 }
@@ -42,66 +17,37 @@
 .question-count {
   font-size: 20px;
   font-weight: bold;
+  color: white;
 }
 
 .question-text {
   font-size: 24px;
   margin-top: 20px;
+  color: white;
 }
 
-/* .answer-section {
+.answer-section {
   display: flex;
   flex-direction: column;
   margin-top: 30px;
-} */
+}
 
 button {
+  padding: 15px 40px;
   margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
   cursor: pointer;
 }
 
-button:disabled {
-  background-color: #ccc;
-  cursor: not-allowed;
+button:hover {
+  background-color: #e0e0e0;
 }
 
 .navigation-section {
-  margin: auto;
-  width: 50%;
-  padding: 10px;
-  /* justify-content: flex-end;
-  position: center;
-  margin-top: 200px; */
-}
-
-.navigation-section button {
-  padding: 20px 40px;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  background-color: #2b1055;
-  color: #ffffff;
-  font-size: 20px;
-}
-
-.close-button {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  padding: 10px 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.owl-logo-container {
   display: flex;
   justify-content: center;
-  align-items: center;
-}
-
-.owl-logo {
-  width: 100%; 
-  max-width: 100%; 
-  height: auto; 
+  position: relative;
+  margin-top: 30px;
 }
