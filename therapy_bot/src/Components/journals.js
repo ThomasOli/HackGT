@@ -42,9 +42,9 @@ const content = [
 
 function SimpleDialog(props) {
   const { onClose, selectedValue, open } = props;
-  const [selectedSummary, setSelectedSummary] = useState('');
-  const [selectedPoints, setSelectedPoints] = useState('');
-  const [selectedQuestion, setSelectedQuestion] = useState('');
+  const [selectedSummary, setSelectedSummary] = useState('Select a topic to get started viewing your note summaries!');
+  const [selectedPoints, setSelectedPoints] = useState('You\'ll have a list of important points from the text\nJust like this!');
+  const [selectedQuestion, setSelectedQuestion] = useState('Make sure to head over to the chatbot to discuss concepts you don\'t understand!');
   const handleClose = () => {
     onClose(selectedValue);
   };
@@ -59,6 +59,24 @@ function SimpleDialog(props) {
     const text = props.text;
     return text.split(',').map(str => <li>{str}</li>);
   }
+
+  // function renderingContent(){
+  //   if(selectedPoints !== ' '){
+  //     return (
+  //       <div className="halfBox">
+  //         <h2>Summary: </h2>
+  //         <p>{selectedSummary}</p>
+  //         <h2>Important Points: </h2>
+  //         <ul><NewlineText text={selectedPoints} /></ul>
+  //         <h2>Critical Question: </h2>
+  //         <p>{selectedQuestion}</p>
+  //           <Button variant="contained" onClick={routeChangeQuiz}>Quiz time!</Button>
+  //       </div>
+  //     );
+  //   } else {
+  //     return null;
+  //   }
+  // }
 
   let navigate = useNavigate();
 
