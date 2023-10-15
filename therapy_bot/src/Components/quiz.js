@@ -8,6 +8,18 @@ const QuizPopup = () => {
   const [score, setScore] = useState(0);
   const [showPopUp, setShowPopUp] = useState(false);
 
+  const questions2 = [
+    {
+      name: "Question 1",
+      question: "What direction does supply point?",
+      answer1: "down",
+      answer2: "up",
+      answer3: "no",
+      answer4: "yes",
+      correct: 4,
+    }
+  ]
+
   //push questions & answers into array
   // const generateQuestions = (numQuestions) => {
   //   const newQuestions = [];
@@ -31,22 +43,32 @@ const QuizPopup = () => {
 
   const questions = [
     {
-      questionText: 'What is the capital of Spain?',
+      questionText: 'According to the law of supply and demand, what happens to the demand for a product as its price rises?',
       answerOptions: [
-        { answerText: 'Barcelona', isCorrect: false },
-        { answerText: 'Madrid', isCorrect: true },
-        { answerText: 'Seville', isCorrect: false },
-        { answerText: 'Valencia', isCorrect: false },
+        { answerText: 'Demand increases', isCorrect: true },
+        { answerText: 'Demand remains the same', isCorrect: false },
+        { answerText: 'Demand decreases', isCorrect: false },
+        { answerText: 'Demand becomes unpredictable', isCorrect: false },
       ],
     },
 
   {
-    questionText: 'What is the capital of France?',
+    questionText: 'Which of the following correctly describes the law of supply in relation to prices?',
     answerOptions: [
-      { answerText: 'Portland', isCorrect: false },
-      { answerText: 'Gainesville', isCorrect: false },
-      { answerText: 'Paris', isCorrect: true },
-      { answerText: 'Nice', isCorrect: false },
+      { answerText: 'Higher prices lead to increased supply', isCorrect: true },
+      { answerText: 'Lower prices lead to increased supply', isCorrect: false },
+      { answerText: 'Higher prices lead to reduced supply', isCorrect: false },
+      { answerText: 'Lower prices have no impact on supply', isCorrect: false },
+    ],
+  },
+
+  {
+    questionText: 'What does the equilibrium price represent in the context of supply and demand?',
+    answerOptions: [
+      { answerText: 'A price where demand exceeds supply', isCorrect: false },
+      { answerText: 'A price that signals the unavailability of a product', isCorrect: false },
+      { answerText: 'A market-clearing price where supply equals demand', isCorrect: true },
+      { answerText: 'A price determined by external factors', isCorrect: false },
     ],
   },
   ];

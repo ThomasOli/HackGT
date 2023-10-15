@@ -26,25 +26,25 @@ const emails = ['Calculus', 'Economics', 'Research Paper', 'Programming'];
 
 const content = [
 {
-  name: 'Calculus',
-  summary: 'A derivative is much easier to take than an integral in my opinion.',
-  points: 'Know how to take derivatives,Know how to take integrals,Know that one is better than the other',
-  question: 'Why are you still doing math by hand?',
+  name: 'Law of Supply and Demand',
+  summary: 'The article explains the fundamental economic principle known as the law of supply and demand. This law describes the relationship between the price of a resource, commodity, or product and its supply and demand. When the price of a product rises, its supply increases, while demand decreases. Conversely, when the price drops, supply decreases, and demand rises. The article also discusses how the interactions between supply, demand, and price are represented on supply and demand curves, leading to a market-clearing price where demand equals supply.',
+  points: 'The law of demand states that as the price of a product rises, its demand decreases, and vice versa.;The law of supply asserts that higher prices lead to an increase in the supply of a product, while lower prices reduce supply.;Supply and demand are graphically represented on supply and demand curves.;The equilibrium or market-clearing price is where supply equals demand.;The price elasticity of a product determines how changes in price affect demand and supply.;External factors like taxes, government regulations, and economic cycles can impact supply and demand curves.',
+  question: 'How does the law of supply and demand impact pricing and the allocation of resources in a market economy, and what factors influence the elasticity of supply and demand for various products?',
 },
 {
-  name: 'Economics',
-  summary: 'It\'s actually not about money, but rather choices and the economy as a whole.',
-  points: 'Know supply,Know demand,Know that is basically everything',
-  question: 'Would you use the word surplus in a real sentence?'
+  name: 'Deaf Culture and American Sign Language',
+  summary: 'This article discusses Deaf culture, the diversity within Deaf communities, and the unique aspects of Deaf identity. It highlights the difference between cultural Deafness and being deaf, as well as the concept of "Deaf Gain." Sign language is a central element of Deaf culture, and various sign languages, like American Sign Language (ASL), are fully realized languages with distinct grammar and vocabulary. The article also delves into the history of deaf education, the challenges faced by deaf individuals in literacy, and the controversy surrounding cochlear implants. Deaf etiquette and shared behaviors within the Deaf community are also explored.',
+  points: 'Deaf culture is a diverse and rich culture influenced by deafness, and it encompasses a set of beliefs, practices, and traditions.;Not all deaf individuals belong to or participate in Deaf culture, and people can become culturally Deaf at different points in their lives.;"Deaf Gain" refers to the benefits and unique perspectives of being Deaf, emphasizing the contributions of the Deaf community to the world.;Sign languages, like ASL, have their own grammar and vocabulary and are not related to spoken languages.;The history of deaf education includes a shift from sign language to oralist approaches, which had negative effects on deaf children\'s development.;There is a literacy gap among deaf individuals due to the challenge of reading in a language (English) that is not their first language.;The use of cochlear implants is a controversial topic within the Deaf community, with varying perspectives on their impact.;The article provides tips on Deaf etiquette, including how to interact with Deaf individuals and respect their cultural norms.',
+  question: 'What are some key benefits and unique perspectives that Deaf individuals, as part of the Deaf community, bring to society, as highlighted by the concept of "Deaf Gain"?'
 }
 ]
 
 
 function SimpleDialog(props) {
   const { onClose, selectedValue, open } = props;
-  const [selectedSummary, setSelectedSummary] = useState('');
-  const [selectedPoints, setSelectedPoints] = useState('');
-  const [selectedQuestion, setSelectedQuestion] = useState('');
+  const [selectedSummary, setSelectedSummary] = useState('Select a topic to get started viewing your note summaries!');
+  const [selectedPoints, setSelectedPoints] = useState('You\'ll have a list of important points from the text\nJust like this!');
+  const [selectedQuestion, setSelectedQuestion] = useState('Make sure to head over to the chatbot to discuss concepts you don\'t understand!');
   const handleClose = () => {
     onClose(selectedValue);
   };
@@ -57,8 +57,26 @@ function SimpleDialog(props) {
 
   function NewlineText(props){
     const text = props.text;
-    return text.split(',').map(str => <li>{str}</li>);
+    return text.split(';').map(str => <li>{str}</li>);
   }
+
+  // function renderingContent(){
+  //   if(selectedPoints !== ' '){
+  //     return (
+  //       <div className="halfBox">
+  //         <h2>Summary: </h2>
+  //         <p>{selectedSummary}</p>
+  //         <h2>Important Points: </h2>
+  //         <ul><NewlineText text={selectedPoints} /></ul>
+  //         <h2>Critical Question: </h2>
+  //         <p>{selectedQuestion}</p>
+  //           <Button variant="contained" onClick={routeChangeQuiz}>Quiz time!</Button>
+  //       </div>
+  //     );
+  //   } else {
+  //     return null;
+  //   }
+  // }
 
   let navigate = useNavigate();
 
@@ -119,7 +137,8 @@ function SimpleDialog(props) {
           <h2>Important Points: </h2>
           <ul><NewlineText text={selectedPoints} /></ul>
           <h2>Critical Question: </h2>
-          <p>{selectedQuestion}</p>
+          <p style={{fontSize: "16px"}}>{selectedQuestion}</p>
+          <br />
             <Button variant="contained" onClick={routeChangeQuiz}>Quiz time!</Button>
         </div>
       </div>

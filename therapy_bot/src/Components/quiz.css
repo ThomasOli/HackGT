@@ -49,11 +49,10 @@
   margin-top: 20px;
 }
 
-/* .answer-section {
+.answer-section {
   display: flex;
-  flex-direction: column;
   margin-top: 30px;
-} */
+}
 
 button {
   margin-bottom: 20px;

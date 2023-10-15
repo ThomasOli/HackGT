@@ -5,8 +5,8 @@
 .navbar {
   width: 100%;
   height: min-content;
-  background: #67538e;
-  font-family: Raleway, sans-serif;
+  background: #40255b;
+  font-family: "Arimo", sans-serif;
   display: flex;
   align-items: center;
   justify-content: space-between;
