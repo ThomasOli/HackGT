@@ -52,6 +52,7 @@ function Chat() {
       sender: "ChatGPT"
     }
   ]);
+
   const [isTyping, setIsTyping] = useState(false);
   useEffect(() => {
     if (isTyping) {
@@ -62,15 +63,21 @@ function Chat() {
   }, [isTyping]);
   
   const getWaitingIndex = () => {
+
     return waiting[waitingIndex];
+    
   };
+
   const getNextPlaceholder = () => {
+
     return placeholders[placeholderIndex];
+
   };
+
   const currentWaiting = getWaitingIndex();
   const currentPlaceholder = getNextPlaceholder();
   const handleSend = async (message) => {
-    const newMessage = {
+  const newMessage = {
       message,
       direction: 'outgoing',
       sender: "user"
@@ -88,7 +95,7 @@ function Chat() {
     
   };
 
-  async function processMessageToChatGPT(chatMessages) { 
+  async function processMessageToChatGPT(chatMessages){ 
     // messages is an array of messages
     // Format messages for chatGPT API
     // API is expecting objects in format of { role: "user" or "assistant", "content": "message here"}
@@ -103,22 +110,20 @@ function Chat() {
       return { role: role, content: messageObject.message}
     });
 
-  if(first){
-
-   
-
-    const userGradeLevel = apiMessages.content; // Replace this with actual user input or extraction
-
+  if(first){ 
+    const userGradeLevel = apiMessages.content; 
+    // Replace this with actual user input or extraction
     // Modify the systemMessage based on the user's grade level
     if (userGradeLevel === "grade school" ||userGradeLevel === "elementary school") {
       systemMessage.content = "Explain things like you're talking to a grade school student.";
-    } else if (userGradeLevel === "middle school") {
+    } 
+    else if (userGradeLevel === "middle school") {
       systemMessage.content = "Explain things like you're talking to a middle school student.";
     } 
     else if (userGradeLevel === "high school") {
       systemMessage.content = "Explain things like you're talking to a high school student.";
     }
-    else if (userGradeLevel === "undergraduate" ||userGradeLevel === "undergrad" ) {
+    else if (userGradeLevel === "undergraduate" || userGradeLevel === "undergrad" ) {
       systemMessage.content = "Explain things like you're talking to a undergraduate level student.";
     }
     else if (userGradeLevel === "graduate") {
@@ -129,11 +134,11 @@ function Chat() {
     }
     first = 0;
 
-    }
-
+  }
     // Get the request body set up with the model we plan to use
     // and the messages which we formatted above. We add a system message in the front to'
     // determine how we want chatGPT to act. 
+    
     const apiRequestBody = {
       "model": "gpt-3.5-turbo",
       "messages": [
