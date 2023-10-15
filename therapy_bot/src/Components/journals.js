@@ -14,12 +14,13 @@ import AddIcon from '@mui/icons-material/Add';
 import Typography from '@mui/material/Typography';
 import { blue } from '@mui/material/colors';
 import Book from './Images/book.png';
-import { Block } from '@mui/icons-material';
+import { Block, SettingsRemoteSharp } from '@mui/icons-material';
 import "./journals.css"
 import SummarizeIcon from '@mui/icons-material/Summarize';
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
 import { useNavigate } from 'react-router';
-import { hexToRgb, rgbToHex } from '@mui/system';
+import { findAll } from '../journal.mjs';
+
 
 
 
@@ -46,14 +47,16 @@ function SimpleDialog(props) {
   const [selectedSummary, setSelectedSummary] = useState('Select a topic to get started viewing your note summaries!');
   const [selectedPoints, setSelectedPoints] = useState('You\'ll have a list of important points from the text;Just like this!');
   const [selectedQuestion, setSelectedQuestion] = useState('Did you head over to the chatbot to discuss concepts you don\'t understand?');
+  const [notes, setNotes] = useState([]);
+  const [loading, setLoading] = useState(false)
   const handleClose = () => {
     onClose(selectedValue);
   };
 
-  const handleListItemClick = (content) => {
-    setSelectedSummary(content.summary);
-    setSelectedPoints(content.points);
-    setSelectedQuestion(content.question);
+  const handleListItemClick = (notes) => {
+    setSelectedSummary(notes.summary);
+    setSelectedPoints(notes.points);
+    setSelectedQuestion(notes.criticalQuestion);
   };
 
   function NewlineText(props){
@@ -61,23 +64,18 @@ function SimpleDialog(props) {
     return text.split(';').map(str => <li>{str}</li>);
   }
 
-  // function renderingContent(){
-  //   if(selectedPoints !== ' '){
-  //     return (
-  //       <div className="halfBox">
-  //         <h2>Summary: </h2>
-  //         <p>{selectedSummary}</p>
-  //         <h2>Important Points: </h2>
-  //         <ul><NewlineText text={selectedPoints} /></ul>
-  //         <h2>Critical Question: </h2>
-  //         <p>{selectedQuestion}</p>
-  //           <Button variant="contained" onClick={routeChangeQuiz}>Quiz time!</Button>
-  //       </div>
-  //     );
-  //   } else {
-  //     return null;
-  //   }
+  // const fetchData = async () => {
+  //   setLoading(true)
+
+  //   const res = await findAll()
+
+  //   setNotes([...res])
+  //   setLoading(false)
   // }
+
+  // useEffect(() => {
+  //   fetchData()
+  // }, [])
 
   let navigate = useNavigate();
 
@@ -90,6 +88,7 @@ function SimpleDialog(props) {
     let path = `/quiz`;
     navigate(path);
   }
+
 
   return (
     <Dialog onClose={handleClose} open={open} fullWidth maxWidth='xlg' style={{display: 'block'}}>
@@ -105,15 +104,15 @@ function SimpleDialog(props) {
         <div className="halfBox">
             
             <List sx={{ pt: 0 }}>
-            {content.map((content) => (
-            <ListItem disableGutters key={content.name}>
-            <ListItemButton onClick={() => handleListItemClick(content)}>
+            {content.map((notes) => (
+            <ListItem disableGutters key={notes.name}>
+            <ListItemButton onClick={() => handleListItemClick(notes)}>
               <ListItemAvatar>
                 <Avatar sx={{ bgcolor: '#40255b', color: '#ffffff'}}>
                   <SummarizeIcon />
                 </Avatar>
               </ListItemAvatar>
-              <ListItemText primary={content.name} />
+              <ListItemText primary={notes.name} />
             </ListItemButton>
           </ListItem>
         ))}
@@ -127,9 +126,25 @@ function SimpleDialog(props) {
                 <AddIcon />
               </Avatar>
             </ListItemAvatar>
-            <ListItemText primary="Discuss a topic" />
+            <ListItemText primary="Discuss a topic/Get something summarized" />
           </ListItemButton>
         </ListItem>
+        {/* <ListItem disableGutters>
+          <ListItemButton
+            autoFocus
+            onClick={() => setTextFieldVisibility(true)}
+          >
+            <ListItemAvatar>
+              <Avatar sx={{bgcolor: '#40255b78', color: '#ffffff'}}>
+                <AddIcon />
+              </Avatar>
+            </ListItemAvatar>
+            <ListItemText primary="Add notes" />
+          </ListItemButton>
+          {isTextFieldVisible ? (
+            <input type="text" placeholder="enter text" />
+          ) : null}
+        </ListItem> */}
             </List>
         </div>
         <div className="halfBox">
