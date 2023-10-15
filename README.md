@@ -1,1 +1,2 @@
-## Therapist Bot
+## HootAI
+HootAI is a wise and friendly study companion designed to make studying easier and more engaging. Learning new concepts can sometimes feel like a forest of new information, but with HootAI, we have crafted a simple way to help you understand complex topics. Our HootAI feature takes long study materials and turns them into easy-to-follow summaries, stores them into your notes, and offers personalized practice problems that allow you to apply what you have learned and test your knowledge. HootAI is here to support you on your learning journey, making sure every step feels manageable and rewarding.  
