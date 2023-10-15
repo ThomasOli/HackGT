@@ -19,6 +19,7 @@ import "./journals.css"
 import SummarizeIcon from '@mui/icons-material/Summarize';
 import {useState} from 'react';
 import { useNavigate } from 'react-router';
+import { hexToRgb, rgbToHex } from '@mui/system';
 
 
 
@@ -43,8 +44,8 @@ const content = [
 function SimpleDialog(props) {
   const { onClose, selectedValue, open } = props;
   const [selectedSummary, setSelectedSummary] = useState('Select a topic to get started viewing your note summaries!');
-  const [selectedPoints, setSelectedPoints] = useState('You\'ll have a list of important points from the text\nJust like this!');
-  const [selectedQuestion, setSelectedQuestion] = useState('Make sure to head over to the chatbot to discuss concepts you don\'t understand!');
+  const [selectedPoints, setSelectedPoints] = useState('You\'ll have a list of important points from the text;Just like this!');
+  const [selectedQuestion, setSelectedQuestion] = useState('Did you head over to the chatbot to discuss concepts you don\'t understand?');
   const handleClose = () => {
     onClose(selectedValue);
   };
@@ -108,7 +109,7 @@ function SimpleDialog(props) {
             <ListItem disableGutters key={content.name}>
             <ListItemButton onClick={() => handleListItemClick(content)}>
               <ListItemAvatar>
-                <Avatar sx={{ bgcolor: blue[100], color: blue[600] }}>
+                <Avatar sx={{ bgcolor: '#40255b', color: '#ffffff'}}>
                   <SummarizeIcon />
                 </Avatar>
               </ListItemAvatar>
@@ -122,11 +123,11 @@ function SimpleDialog(props) {
             onClick={routeChangeChat}
           >
             <ListItemAvatar>
-              <Avatar>
+              <Avatar sx={{bgcolor: '#40255b78', color: '#ffffff'}}>
                 <AddIcon />
               </Avatar>
             </ListItemAvatar>
-            <ListItemText primary="Add topic" />
+            <ListItemText primary="Discuss a topic" />
           </ListItemButton>
         </ListItem>
             </List>
@@ -139,7 +140,7 @@ function SimpleDialog(props) {
           <h2>Critical Question: </h2>
           <p style={{fontSize: "16px"}}>{selectedQuestion}</p>
           <br />
-            <Button variant="contained" onClick={routeChangeQuiz}>Quiz time!</Button>
+            <Button variant="contained" onClick={routeChangeQuiz} sx={{bgcolor: '#40255b'}}>Quiz time!</Button>
         </div>
       </div>
     </Dialog>
