@@ -11,3 +11,16 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #00008B;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #00008B;
+  }
+}
+
