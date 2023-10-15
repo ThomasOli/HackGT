@@ -1,0 +1,106 @@
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(#2b1055, #7597de);
+  color: white; 
+}
+
+.popup button {
+  margin: 10px;
+  padding: 12px 30px; /* Adjusted padding for a better visual appearance */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #fff;
+  color: #2b1055; /* Changed button text color for better contrast */
+}
+
+.popup button:hover {
+  background-color: #e0e0e0;
+}
+
+
+.quiz {
+  padding: 50px;
+  width: 600px;
+  margin: auto;
+  position: relative;
+  z-index: 2; 
+}
+.question-section {
+  margin-bottom: 30px;
+}
+
+.question-count {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.question-text {
+  font-size: 24px;
+  margin-top: 20px;
+}
+
+.answer-section {
+  display: flex;
+  margin-top: 30px;
+}
+
+button {
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.navigation-section {
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+  /* justify-content: flex-end;
+  position: center;
+  margin-top: 200px; */
+}
+
+.navigation-section button {
+  padding: 20px 40px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background-color: #2b1055;
+  color: #ffffff;
+  font-size: 20px;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 10px 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.owl-logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.owl-logo {
+  width: 100%; 
+  max-width: 100%; 
+  height: auto; 
+}
