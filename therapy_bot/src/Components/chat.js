@@ -3,12 +3,12 @@ import './chat.css'
 import '@chatscope/chat-ui-kit-styles/dist/default/styles.min.css';
 import { MainContainer, ChatContainer, MessageList, Message, MessageInput, TypingIndicator } from '@chatscope/chat-ui-kit-react';
 
-const API_KEY = "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";
+const API_KEY = "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";
 // "Explain things like you would to a 10 year old learning how to code."
 const systemMessage = { //  Explain things like you're talking to a software professional with 5 years of experience.
-  "role": "system", "content": "Explain things like you're talking to a software professional with 2 years of experience."
+  "role": "system", "content": "Explain things like you're talking to a 10 year old."
 }
-
+let first = 1;
 const waiting = ["Hoot is flapping his feathers", "Hoot is thinking", "Hoot is pondering", "Hoot is deliberating", "Hoot is meditating","Hoot is musing", "Hoot is ruminating","Hoot is cogitating","Hoot is reflecting", "Hoot is considering", "Hoot is contemplating", "Hoot is analyzing", "Hoot is processing", "Hoot is evaluating", "Hoot is scheming", "Hoot is strategizing","Hoot is brainstorming", "Hoot is daydreaming", "Hoot is deep in thought","Hoot is lost in thought"]
 const placeholders = [
     "Type a message...",
@@ -47,7 +47,7 @@ function Chat() {
   const[waitingIndex, setwaitingIndex] = useState(0);
   const [messages, setMessages] = useState([
     {
-      message: "Hoo Hoo, I'm Hoot! Ask me anything! Tell me your grade level!",
+      message: "Hoo Hoo, I'm Hoot! What is your education level?",
       sentTime: "just now",
       sender: "ChatGPT"
     }
@@ -75,7 +75,7 @@ function Chat() {
       direction: 'outgoing',
       sender: "user"
     };
-
+    
     const newMessages = [...messages, newMessage];
     
     setMessages(newMessages);
@@ -93,7 +93,6 @@ function Chat() {
     // Format messages for chatGPT API
     // API is expecting objects in format of { role: "user" or "assistant", "content": "message here"}
     // So we need to reformat
-
     let apiMessages = chatMessages.map((messageObject) => {
       let role = "";
       if (messageObject.sender === "ChatGPT") {
@@ -104,6 +103,33 @@ function Chat() {
       return { role: role, content: messageObject.message}
     });
 
+  if(first){
+
+   
+
+    const userGradeLevel = apiMessages.content; // Replace this with actual user input or extraction
+
+    // Modify the systemMessage based on the user's grade level
+    if (userGradeLevel === "grade school" ||userGradeLevel === "elementary school") {
+      systemMessage.content = "Explain things like you're talking to a grade school student.";
+    } else if (userGradeLevel === "middle school") {
+      systemMessage.content = "Explain things like you're talking to a middle school student.";
+    } 
+    else if (userGradeLevel === "high school") {
+      systemMessage.content = "Explain things like you're talking to a high school student.";
+    }
+    else if (userGradeLevel === "undergraduate" ||userGradeLevel === "undergrad" ) {
+      systemMessage.content = "Explain things like you're talking to a undergraduate level student.";
+    }
+    else if (userGradeLevel === "graduate") {
+      systemMessage.content = "Explain things like you're talking to a graduate level student.";
+    }
+    else {
+      systemMessage.content = "Explain things like you're talking to a beginner.";
+    }
+    first = 0;
+
+    }
 
     // Get the request body set up with the model we plan to use
     // and the messages which we formatted above. We add a system message in the front to'
