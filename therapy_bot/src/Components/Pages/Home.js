@@ -17,7 +17,6 @@ export default function Home() {
   return (
     <main>  
       <ParallaxProvider>
-      
         <header>
           <ParallaxBanner
             className="banner"
@@ -51,23 +50,26 @@ export default function Home() {
           >
         
             <div className="textdiv">
-                <h1 className="text">HootAI</h1>
+                <h1 className="text">Owl you need is knowledge. Not long readings.</h1>
             </div>
         </ParallaxBanner>
         </header>
       </ParallaxProvider>
-      <view className="homeMessageBox" style={{display: "flex"}}>
-        <h1 className="messageHeading">
+      <h1 className="messageHeading">
           Welcome to HootAI - your new tool for studying smarter and faster.
-          
-          <p className="message">
-            Just upload your reading, article, or content and we'll generate a summary, important points, 
-            and a quiz for you. Quizzes not your learning style? Explore our tactical option, which allows you to 
-            interact directly with what you have to learn.  
-          </p>
         </h1>
+      <view className="homeMessageBox">
+        <p className="paragraph">
+          Just upload your reading, article, or content and we'll generate a summary, important points, 
+          and a quiz for you. Quizzes not your learning style? Talk to Hoot, and have a discussion on concepts you don't understand. 
+          <br />
+          <br />
+          Whether you prefer quick summaries or in-depth discussions, HootAI empowers your learning journey. Upload your materials, and 
+        let Hoot adapt to your unique study style. Watch our demonstration video below to learn how to make the best use of HootAI. 
+        </p>
         <img src={girlStudying} className="messageImg"></img>
       </view>
+      <img src="../Images/gator.png" />
     </main>
   );
 }

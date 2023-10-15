@@ -19,6 +19,7 @@ import "./journals.css"
 import SummarizeIcon from '@mui/icons-material/Summarize';
 import {useState} from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router';
 
 
 
@@ -28,13 +29,13 @@ const content = [
 {
   name: 'Calculus',
   summary: 'A derivative is much easier to take than an integral in my opinion.',
-  points: 'Know how to take derivatives\nKnow how to take integrals\nKnow that one is better than the other',
+  points: 'Know how to take derivatives,Know how to take integrals,Know that one is better than the other',
   question: 'Why are you still doing math by hand?',
 },
 {
   name: 'Economics',
   summary: 'It\'s actually not about money, but rather choices and the economy as a whole.',
-  points: 'Know supply\nKnow demand\nKnow that is basically everything',
+  points: 'Know supply,Know demand,Know that is basically everything',
   question: 'Would you use the word surplus in a real sentence?'
 }
 ]
@@ -84,6 +85,17 @@ function SimpleDialog(props) {
       });
   };
 
+  let navigate = useNavigate();
+
+  const routeChangeChat = () =>{
+    let path = `/chat`;
+    navigate(path);
+  }
+
+  const routeChangeQuiz = () =>{
+    let path = `/quiz`;
+    navigate(path);
+  }
 
   return (
     <Dialog onClose={handleClose} open={open} fullWidth maxWidth='xlg' style={{display: 'block'}}>
@@ -114,7 +126,7 @@ function SimpleDialog(props) {
         <ListItem disableGutters>
           <ListItemButton
             autoFocus
-            // onClick={() => handleListItemClick('addAccount')}
+            onClick={routeChangeChat}
           >
             <ListItemAvatar>
               <Avatar>
@@ -127,10 +139,13 @@ function SimpleDialog(props) {
             </List>
         </div>
         <div className="halfBox">
-          <h2>{selectedSummary}</h2>
-          <h3>{selectedPoints}</h3>
-          <h4>{selectedQuestion}</h4>
-
+          <h2>Summary: </h2>
+          <p>{selectedSummary}</p>
+          <h2>Important Points: </h2>
+          <ul><NewlineText text={selectedPoints} /></ul>
+          <h2>Critical Question: </h2>
+          <p>{selectedQuestion}</p>
+            <Button variant="contained" onClick={routeChangeQuiz}>Quiz time!</Button>
         </div>
       </div>
     </Dialog>
@@ -159,12 +174,8 @@ export default function SimpleDialogDemo() {
 
 
   return (
-    <div>
-      <Typography variant="subtitle1" component="div">
-        {/* Selected: {selectedValue} */}
-      </Typography>
-      <br />
-      <Button onClick={handleClickOpen}>
+    <div className="bookClass">
+      <Button onClick={handleClickOpen} className="buttonBook">
         <img src={Book} />
       </Button>
       <SimpleDialog
