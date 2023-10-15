@@ -3,7 +3,7 @@ import './chat.css'
 import '@chatscope/chat-ui-kit-styles/dist/default/styles.min.css';
 import { MainContainer, ChatContainer, MessageList, Message, MessageInput, TypingIndicator } from '@chatscope/chat-ui-kit-react';
 
-const API_KEY = "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";
+const API_KEY = "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";
 // "Explain things like you would to a 10 year old learning how to code."
 const systemMessage = { //  Explain things like you're talking to a software professional with 5 years of experience.
   "role": "system", "content": "Explain things like you're talking to a 10 year old."
@@ -42,6 +42,7 @@ const placeholders = [
     "How do artificial neural networks work in machine learning?",
     "What are the latest trends in cybersecurity?"
 ];
+let greetingMessage = "";
 function Chat() {
   const [placeholderIndex, setPlaceholderIndex] = useState(0);
   const[waitingIndex, setwaitingIndex] = useState(0);
@@ -111,30 +112,39 @@ function Chat() {
     });
 
   if(first){ 
+    
     const userGradeLevel = apiMessages.content; 
     // Replace this with actual user input or extraction
     // Modify the systemMessage based on the user's grade level
-    if (userGradeLevel === "grade school" ||userGradeLevel === "elementary school") {
-      systemMessage.content = "Explain things like you're talking to a grade school student.";
+    if (userGradeLevel === "grade school" || userGradeLevel === "elementary school") {
+      systemMessage.content = "Explain things like you're talking to a baby.";
+      greetingMessage = "Hello, elementary school student!";
     } 
     else if (userGradeLevel === "middle school") {
       systemMessage.content = "Explain things like you're talking to a middle school student.";
+      greetingMessage = "Hello, middle school student!";
     } 
     else if (userGradeLevel === "high school") {
       systemMessage.content = "Explain things like you're talking to a high school student.";
+      greetingMessage = "Hello, high school student!";
     }
     else if (userGradeLevel === "undergraduate" || userGradeLevel === "undergrad" ) {
       systemMessage.content = "Explain things like you're talking to a undergraduate level student.";
+      greetingMessage = "Hello, undergraduate school student!";
     }
     else if (userGradeLevel === "graduate") {
       systemMessage.content = "Explain things like you're talking to a graduate level student.";
+      greetingMessage = "Hello, graduate school student!";
     }
     else {
       systemMessage.content = "Explain things like you're talking to a beginner.";
+      greetingMessage = "Hello, student!";
     }
-    first = 0;
 
   }
+
+    systemMessage.content = greetingMessage;
+    first = 0;
     // Get the request body set up with the model we plan to use
     // and the messages which we formatted above. We add a system message in the front to'
     // determine how we want chatGPT to act. 
@@ -146,6 +156,7 @@ function Chat() {
         ...apiMessages // The messages from our chat with ChatGPT
       ]
     }
+
 
     await fetch("https://api.openai.com/v1/chat/completions", 
     {
