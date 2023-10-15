@@ -71,7 +71,7 @@ export default function Home() {
         <img src={girlStudying} className="messageImg"></img>
       </view>
       <div className="demoVideo">
-        <img src={demo} style={{float: 'center', margin: "auto"}}/>
+        <img src={demo} style={{float: 'center', margin: "auto", width: "1000px"}}/>
       </div>
       
     </main>

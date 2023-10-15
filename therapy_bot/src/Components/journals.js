@@ -56,7 +56,7 @@ function SimpleDialog(props) {
   const handleListItemClick = (notes) => {
     setSelectedSummary(notes.summary);
     setSelectedPoints(notes.points);
-    setSelectedQuestion(notes.criticalQuestion);
+    setSelectedQuestion(notes.question);
   };
 
   function NewlineText(props){
