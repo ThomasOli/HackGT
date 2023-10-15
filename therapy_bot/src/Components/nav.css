@@ -2,9 +2,6 @@
   box-sizing: border-box;
 }
 
-h1 {
-  font-family: "Fire Sans", sans-serif;
-}
 .navbar {
   width: 100%;
   height: min-content;
@@ -81,6 +78,7 @@ h1 {
 }
 
 h1 {
+  font-family: "Fire Sans", sans-serif;
   color: white;
   display: flex;
   justify-content: center;

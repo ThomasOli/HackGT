@@ -5,17 +5,29 @@
     padding: 0;
     margin: 0;
     background: #40255b;
+    font-family: 'Cantarell';
+    color: white;
   }
   
   main {
-    height: 300vh;
+    height: 200vh;
   }
   
-  p {
-    font-family: helvetica, sans-serif;
-    color: #eee;
-  }
+  /* p {
+    font-family: 'Cantarell';
+    font-size: 30px;
+    color: blue;
+  } */
   
+  .paragraph {
+    font-family: 'Cantarell';
+    color: white;
+    width: 75%;
+    padding: 100px;
+    padding-top: 0px;
+    
+  }
+
   .banner {
     height: 100vh;
     background: #bbe8f6;
@@ -32,5 +44,27 @@
   .text {
     size: 8xl;
     color: white;
-    font: thin;
+    font-family: 'Fira Sans';
+  }
+
+  .homeMessageBox {
+    display: flex;
+    align-items: center;
+    align-content: center;
+  }
+
+  .messageHeading {
+    text-align: center;
+    font-size: 35px;
+    align-items: center;
+    font-family: "Arimo";
+    color: white;
+  }
+
+  .messageImg {
+    max-width: auto;
+    max-height: auto;
+    width: 500px;
+    height: 350px; 
+    align-items: center;
   }
