@@ -6,7 +6,7 @@
   width: 100%;
   height: min-content;
   background: #2b1055;
-  font-family: 'Arimo', sans-serif;
+  font-family: Raleway, sans-serif;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -78,7 +78,6 @@
 }
 
 h1 {
-  font-family: "Fire Sans", sans-serif;
   color: white;
   display: flex;
   justify-content: center;

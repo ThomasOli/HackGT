@@ -18,7 +18,6 @@ import { Block } from '@mui/icons-material';
 import "./journals.css"
 import SummarizeIcon from '@mui/icons-material/Summarize';
 import {useState} from 'react';
-import axios from 'axios';
 import { useNavigate } from 'react-router';
 
 
@@ -50,40 +49,16 @@ function SimpleDialog(props) {
     onClose(selectedValue);
   };
 
-
-  const handleListItemClick = () => {
-    // Replace 'your-collection-name' with the actual name of your collection
-    const apiKey = 'C8miSI8ZHqpltlonuxHcthjyyhI05sdsfFIrCjuqSQTSqwXhkpndSkvbXF3zXlN6'; // Replace 'your-api-key' with your actual MongoDB Atlas API key
-    const dataApiUrl = 'https://us-east-2.aws.data.mongodb-api.com/app/data-kpymm/endpoint/data/v1/action/insertOne';
-
-    const data = {
-      dataSource: 'Cluster0',
-      database: 'HackGT',
-      collection: 'SubjectDetails',
-      document: {
-        name: 'Harvest',
-        breed: 'Labrador',
-        age: 5
-      }
-    };
-    
-    fetch(dataApiUrl, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Access-Control-Request-Headers': '*',
-        'api-key': apiKey,
-      },
-      body: JSON.stringify(data)
-    })
-      .then(response => response.json())
-      .then(data => {
-        console.log('Insert result:', data);
-      })
-      .catch(error => {
-        console.error('Error inserting data:', error);
-      });
+  const handleListItemClick = (content) => {
+    setSelectedSummary(content.summary);
+    setSelectedPoints(content.points);
+    setSelectedQuestion(content.question);
   };
+
+  function NewlineText(props){
+    const text = props.text;
+    return text.split(',').map(str => <li>{str}</li>);
+  }
 
   let navigate = useNavigate();
 
@@ -113,7 +88,7 @@ function SimpleDialog(props) {
             <List sx={{ pt: 0 }}>
             {content.map((content) => (
             <ListItem disableGutters key={content.name}>
-            <ListItemButton onClick={() => handleListItemClick()}>
+            <ListItemButton onClick={() => handleListItemClick(content)}>
               <ListItemAvatar>
                 <Avatar sx={{ bgcolor: blue[100], color: blue[600] }}>
                   <SummarizeIcon />

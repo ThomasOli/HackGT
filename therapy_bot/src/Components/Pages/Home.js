@@ -10,6 +10,7 @@ import bg3 from "../Images/bg-3.png";
 import bg4 from "../Images/bg-4.png";
 import bg5 from "../Images/bg-5.png";
 import girlStudying from "../Images/girlStudying.png";
+import demo from "../Images/demo.gif";
 
 import "./Home.css";
 
@@ -69,7 +70,10 @@ export default function Home() {
         </p>
         <img src={girlStudying} className="messageImg"></img>
       </view>
-      <img src="../Images/gator.png" />
+      <div className="demoVideo">
+        <img src={demo} style={{float: 'center', margin: "auto"}}/>
+      </div>
+      
     </main>
   );
 }
