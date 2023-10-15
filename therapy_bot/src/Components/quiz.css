@@ -40,11 +40,13 @@
 }
 
 .question-count {
+  font-family: 'Fira Sans', sans-serif;
   font-size: 20px;
   font-weight: bold;
 }
 
 .question-text {
+  font-family: 'Arimo', sans-serif;
   font-size: 24px;
   margin-top: 20px;
 }
