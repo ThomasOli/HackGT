@@ -1,6 +1,6 @@
 h1 {
-    font-family: "Fire Sans", sans-serif;
-    color: blue;
+    font-family: "Fira Sans", sans-serif;
+    color: #40255b;
     float: top;
     margin-bottom: 0px;
 }
@@ -15,6 +15,7 @@ h1 {
     vertical-align: top;
     padding-bottom: 30px;
     padding-right: 30px;
+    font-family: "Arimo";
 }
 
 p {
@@ -39,6 +40,10 @@ h2 {
 
 .buttonBook {
     float: center;
+}
+
+li {
+    font-size: 16px;
 }
 
 
