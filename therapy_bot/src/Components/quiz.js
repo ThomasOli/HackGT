@@ -111,12 +111,16 @@ const QuizPopup = () => {
 
   return (
     <div className="quiz">
-      <div className="owl-logo-container">
-        <img src={owlLogo} alt="Owl Logo" className="owl-logo" />
-      </div>
-      <div className="navigation-section">
-        <button onClick={handlePopUp}>Test your Knowledge!</button>
-      </div>
+      {!state.showPopUp && (
+        <div>
+          <div className="owl-logo-container">
+            <img src={owlLogo} alt="Owl Logo" className="owl-logo" />
+          </div>
+          <div className="navigation-section">
+            <button onClick={handlePopUp}>Test your Knowledge!</button>
+          </div>
+        </div>
+      )}
 
       {state.showPopUp ? (
         <div className="popup">
